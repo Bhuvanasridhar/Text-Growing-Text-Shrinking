@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<center>
+<head> PROGRAM-3 </head>
+<body>
+<p id="Text1">TEXT-GROWING</p>
+<p id="Text2">TEXT-SHRINKING</p>
+</body>
+</center>
+<script>
+var size=10;
+var Wait=setInterval(Grow,100);
+function Grow()
+{
+if(size<51)
+{
+size=size+1;
+document.getElementById("Text1").style.fontSize=(size+'pt');
+document.getElementById("Text1").style.color="red";
+document.getElementById("Text2").style.visibility="hidden";
+}
+else
+{
+clearInterval(Wait);
+Wait=setInterval(Shrink,100);
+document.getElementById("Text1").style.visibility="hidden";
+document.getElementById("Text1").style.fontSize='1pt';
+document.getElementById("Text2").style.visibility="visible";
+}
+}
+function Shrink()
+{
+if(size>5)
+{
+size=size-1;
+document.getElementById("Text2").style.fontSize=(size+'pt');
+document.getElementById("Text2").style.color="blue";
+}
+else
+{
+clearInterval(Wait);
+}
+}
+</script>
+</html>
